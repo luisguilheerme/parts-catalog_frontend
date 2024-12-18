@@ -1,14 +1,39 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { PartListDTO } from '../models/dto/part-list-dto';
+
+export interface Page<T> {
+  content: T[];
+  totalPages: number;
+  totalElements: number;
+  size: number;
+  number: number;
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class PartService {
 
   private baseUrl = 'http://localhost:8080'; 
+  
   constructor(private http: HttpClient) {}
+
+  getAllParts(params: any): Observable<Page<PartListDTO>> {
+    return this.http.get<Page<PartListDTO>>(`${this.baseUrl}/parts`, { params }).pipe(
+      map((page: Page<PartListDTO>) => ({
+        ...page,
+        content: page.content.map(part => ({
+          id: part.id,
+          subGroup: part.subGroup,
+          imgUrl: part.imgUrl
+        }))
+      }))
+    );
+  }  
+
   getGroups(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/groups`);
   }

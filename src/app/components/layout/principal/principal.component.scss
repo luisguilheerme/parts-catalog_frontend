@@ -1,0 +1,72 @@
+.search-card {
+    max-width: 400px; 
+    margin: 2rem 0 2rem 0; 
+    padding-left: 1rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  
+    mat-card-header {
+      background-color: #1976d2; 
+      color: white; 
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+  
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+    mat-card-content {
+      padding: 1.5rem; 
+    }
+  }
+  
+  .search-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+  }
+  
+  .search-field {
+    width: 100%;
+  }
+  
+  .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #1976d2; 
+    color: white;
+    transition: background-color 0.3s;
+  
+    mat-icon {
+      margin-right: 0.5rem; 
+    }
+  
+    &:hover {
+      background-color: #155a9d; 
+    }
+    .main-container {
+      display: flex;
+      height: 100vh; 
+    }
+    
+    .search-card {
+      width: 300px; 
+      margin: 1rem;
+      flex-shrink: 0; 
+    }
+    
+    .list-container {
+      flex-grow: 1; 
+      padding: 1rem;
+      overflow: auto; 
+      display: flex;
+      flex-direction: column;
+    }
+    
+  }
+  
