@@ -146,4 +146,22 @@ export class SearchBarComponent {
     return params;
   }
 
+  clearSearch() {
+    this.searchCriteria = {
+      starterAlternatorCode: '',
+      originalCode: '',
+      code: '',
+      group: null,
+      subGroup: null,
+      manufacturer: null,
+      brand: null,
+      model: null
+    };
+    this.models = []; 
+    this.modelPlaceholder = 'Selecione uma Marca';
+    this.subGroups = []; 
+    this.subGroupPlaceholder = 'Selecione um Grupo';
+    this.router.navigate(['/parts']);
+  }
+
 }
