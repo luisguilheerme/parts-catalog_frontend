@@ -4,13 +4,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body, html {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Impede a barra de rolagem na tela */
+    overflow: hidden; 
   }
   
   .container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Garante que a tela ocupe 100% da altura */
+    height: 100vh; 
   }
   
   .sidenav {
@@ -23,8 +23,8 @@ body, html {
     color: white;
     z-index: 1;
     height: 100vh;
-    overflow-y: auto;  /* Permite rolagem dentro do sidenav */
-    padding-top: 10px; /* Espaçamento para o conteúdo dentro do sidenav */
+    overflow-y: auto;  
+    padding-top: 10px; 
   }
   
   .main-content {

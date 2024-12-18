@@ -1,0 +1,108 @@
+.part-details-container {
+  width: 80%; 
+  max-width: 900px;  
+  margin: 20px auto;
+  background-color: #fff;  
+  border-radius: 8px;  
+  padding: 20px;
+  box-shadow: none;  
+  display: flex;
+  flex-direction: column;
+  height: auto;  
+  overflow-y: auto; 
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.part-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.part-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: none; 
+}
+
+.part-details {
+  font-size: 16px;
+  color: #333;
+}
+
+.part-detail-item {
+  margin-bottom: 10px;
+}
+
+.part-detail-item b {
+  font-weight: bold;
+}
+
+.applications {
+  margin-top: 20px;
+}
+
+button.mat-raised-button {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #007bff;
+}
+
+button.mat-raised-button:hover {
+  background-color: transparent;
+  color: #0056b3; 
+}
+
+::ng-deep .mat-dialog-container {
+  background-color: white;  
+  border: none;  
+  box-shadow: none;  
+}
+
+.mat-dialog-content {
+  padding: 20px; 
+}
+
+.mat-dialog-actions {
+  padding: 0; 
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: none;
+  font-size: 32px;
+  color: #333;
+  cursor: pointer;
+  border-radius: 10%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #f1f1f1;
+}

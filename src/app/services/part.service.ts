@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { PartListDTO } from '../models/dto/part-list-dto';
+import { PartDetailDTO } from '../models/dto/part-detail-dto';
 
 export interface Page<T> {
   content: T[];
@@ -33,6 +34,10 @@ export class PartService {
       }))
     );
   }  
+
+  getPartById(id: number): Observable<PartDetailDTO> {
+    return this.http.get<PartDetailDTO>(`${this.baseUrl}/parts/${id}`);    
+  }
 
   getGroups(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/groups`);

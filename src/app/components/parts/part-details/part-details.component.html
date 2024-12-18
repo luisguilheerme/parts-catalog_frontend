@@ -1,0 +1,52 @@
+<div class="part-details-container" *ngIf="part">
+  <button class="close-button" (click)="closeModal()">×</button>
+  <div class="modal-header">
+    <h2>{{ part.subGroup }}</h2>
+    <h3>{{ part.manufacturer?.name }}</h3>
+  </div>
+
+  <div class="part-image-container">
+    <img 
+      [src]="part.imgUrl || 'assets/placeholder.png'" 
+      alt="Imagem da peça" 
+      class="part-image" 
+    />
+  </div>
+  
+  <div class="part-details">
+    <div class="part-detail-item">
+      <b>Códigos Equivalentes: </b> 
+      <span>{{ part.codes?.join(', ') }}</span>
+    </div>
+
+    <div class="part-detail-item">
+      <b>Códigos Originais: </b> 
+      <span>{{ part.originalCodes?.join(', ') }}</span>
+    </div>
+
+    <div class="part-detail-item">
+      <b>Motor de Partida/Alternador: </b> 
+      <span>{{ part.startersAlternatorsCodes?.join(', ') }}</span>
+    </div>
+
+    <div *ngIf="part?.applications && part.applications.length" class="applications">
+      <div *ngFor="let brandGroup of part.applications" class="application-group">
+        <div class="brand-name">
+          <strong>{{ brandGroup.brand | uppercase }}</strong>
+        </div>
+        <br>
+        <div class="applications-list">
+          <span *ngFor="let application of brandGroup.applications; let last = last" class="application-item">
+            <b>{{ application.model.name }} </b> {{ application.obs }} {{ application.startingYear }} 
+            <span *ngIf="application.startingYear || application.finalYear">
+              <b>→</b>
+            </span>
+            {{ application.finalYear }}  
+            <span *ngIf="!last"> / </span>
+          </span>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

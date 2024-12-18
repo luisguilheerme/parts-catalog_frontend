@@ -1,7 +1,7 @@
 <mat-grid-list cols="4" rowHeight="350px" gutterSize="16px">
   <mat-grid-tile *ngFor="let part of parts">
     <mat-card class="part-card">
-      <img mat-card-image [src]="part.imgUrl" alt="Foto" />
+      <img mat-card-image [src]="part.imgUrl" alt="Foto" (click)="viewDetails(part.id)" />
       <mat-card-content>
         <b><p>{{ part.subGroup }}</p></b>          
       </mat-card-content>

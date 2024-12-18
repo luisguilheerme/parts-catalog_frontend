@@ -6,6 +6,8 @@ import { PartListDTO } from '../../../models/dto/part-list-dto';
 import { Page, PartService } from '../../../services/part.service';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { MatGridList, MatGridTile } from '@angular/material/grid-list';
+import { MatDialog } from '@angular/material/dialog';
+import { PartDetailsComponent } from '../part-details/part-details.component';
 
 @Component({
   selector: 'app-part-list',
@@ -22,7 +24,7 @@ export class PartListComponent implements OnInit {
   totalElements: number = 0;
   currentPage: number = 0;
 
-  constructor(private partService: PartService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private partService: PartService, private router: Router, private route: ActivatedRoute, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -37,6 +39,12 @@ export class PartListComponent implements OnInit {
       this.totalPages = data.totalPages; 
       this.totalElements = data.totalElements; 
       this.currentPage = data.number; 
+    });
+  }
+
+  viewDetails(partId: number) {    
+    this.dialog.open(PartDetailsComponent, {
+      data: { id: partId }
     });
   }
 
