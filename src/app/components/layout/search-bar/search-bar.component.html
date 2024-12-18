@@ -1,0 +1,64 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="50">
+      <mat-nav-list class="nav-list">
+        <a mat-list-item class="items">
+          <br>Nº Motor de Partida/Alternador
+          <br><input matInput placeholder=""><br><br>
+        </a>
+        <a mat-list-item class="items">
+          Nº Original
+          <br><input matInput placeholder=""><br><br>
+        </a>
+        <a mat-list-item class="items">
+          Nº Equivalente
+          <br><input matInput placeholder=""><br><br>
+        </a>
+        <a mat-list-item class="items">
+          Grupo
+          <br>
+          <mat-select [(ngModel)]="selectedGroup" (selectionChange)="onGroupChange()">
+            <mat-option *ngFor="let group of groups" [value]="group.name">
+              {{ group.name }}
+            </mat-option>
+          </mat-select><br><br>
+        </a>
+        <a mat-list-item class="items">
+          Sub-Grupo
+          <br>
+          <mat-select [disabled]="!subGroups.length" [placeholder]="subGroupPlaceholder">
+            <mat-option *ngFor="let subGroup of subGroups" [value]="subGroup.id">
+              {{ subGroup.name }}
+            </mat-option>
+          </mat-select><br><br>
+        </a>
+        <a mat-list-item class="items">
+          Fabricante
+          <mat-select>
+            <mat-option *ngFor="let manufacturer of manufacturers" [value]="manufacturer.id">
+              {{ manufacturer.name }}
+            </mat-option>
+          </mat-select><br><br>
+        </a>
+        <a mat-list-item class="items">
+            Marca
+            <br>
+            <mat-select [(ngModel)]="selectedBrand" (selectionChange)="onBrandChange()">
+              <mat-option *ngFor="let brand of brands" [value]="brand.name">
+                {{ brand.name }}
+              </mat-option>
+            </mat-select><br><br>            
+          </a>
+        <a mat-list-item class="items">
+          Modelo
+          <br>
+          <mat-select [disabled]="!models.length" [placeholder]="modelPlaceholder">
+            <mat-option *ngFor="let model of models" [value]="model.id">
+              {{ model.name }}
+            </mat-option>
+          </mat-select><br><br>
+        </a>
+        <a mat-list-item class="items">
+            <button mat-raised-button class="button" type="submit">
+              Pesquisar
+            </button>
+        </a><br>
