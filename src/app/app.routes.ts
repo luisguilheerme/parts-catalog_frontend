@@ -8,7 +8,6 @@ export const routes: Routes = [
         path: '',
         component: PrincipalComponent,
         children: [
-            { path: 'parts', component: PartListComponent },            
-            { path: '', redirectTo: '/parts', pathMatch: 'full' }
+            { path: '', component: PartListComponent }          
           ]},
 ];

@@ -105,7 +105,7 @@ export class SearchBarComponent {
   
   onSearch() {
     const queryParams = this.buildQueryParams();
-    this.router.navigate(['/parts'], { queryParams });
+    this.router.navigate([''], { queryParams });
   }
 
   buildQueryParams() {
@@ -161,7 +161,7 @@ export class SearchBarComponent {
     this.modelPlaceholder = 'Selecione uma Marca';
     this.subGroups = []; 
     this.subGroupPlaceholder = 'Selecione um Grupo';
-    this.router.navigate(['/parts']);
+    this.router.navigate(['']);
   }
 
 }
